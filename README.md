@@ -27,7 +27,7 @@
   ✔️ Botões posicionados com Grid <br>
   ✔️ Layout da view posicionado com Flex Box <br>
 
-  #### CSS
+  #### HTML
   ✔️ Utilização correta das metatags do HTML5 <br>
   ✔️ Utilização adequada das tags semânticas do HTML5 <br>
 
