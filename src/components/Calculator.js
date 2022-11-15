@@ -8,18 +8,18 @@ function Calculator() {
   const [operator, setOperator] = useState("")
   const [result, setResult] = useState("")
 
-  function inputValue(e) {
+  const inputValue = (e) => {
     setNum(num + e.target.value)
   }
 
-  function clearCount() {
+  const clearCount = () => {
     setNum("")
     setOldNum("")
     setOperator("")
     setResult("")
   }
 
-  function changeSign() {
+  const changeSign = () => {
     if(num && !oldNum) {
       setNum(num*(-1))
     }
@@ -29,7 +29,7 @@ function Calculator() {
     }
   }
 
-  function percentage() {
+  const percentage = () => {
     if(num && !oldNum) {
       setNum(num/100)
     }
@@ -40,7 +40,7 @@ function Calculator() {
   }
 
 
-  function handleOperator(e) {
+  const handleOperator = (e) => {
     if(num && !oldNum) {
       setNum("")
       setOldNum(num)
@@ -52,7 +52,7 @@ function Calculator() {
     }
   }
 
-  function calculate() {
+  const calculate = () => {
     if(operator === "+") {
       setResult(parseFloat(oldNum) + parseFloat(num))
       setNum("")
@@ -76,7 +76,7 @@ function Calculator() {
     }
   }
 
-  function inputDot(e) {
+  const inputDot = (e) => {
     if(!num.includes(".")) {
       inputValue(e)
     }
