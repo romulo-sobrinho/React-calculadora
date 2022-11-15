@@ -19,6 +19,27 @@ function Calculator() {
     setResult("")
   }
 
+  function changeSign() {
+    if(num && !oldNum) {
+      setNum(num*(-1))
+    }
+
+    if(result) {
+      setResult(result*(-1))
+    }
+  }
+
+  function percentage() {
+    if(num && !oldNum) {
+      setNum(num/100)
+    }
+
+    if(result) {
+      setResult(result/100)
+    }
+  }
+
+
   function handleOperator(e) {
     if(num && !oldNum) {
       setNum("")
@@ -28,18 +49,6 @@ function Calculator() {
 
     if(oldNum) {
       setOperator(e.target.value)
-    }
-  }
-
-  function percentage() {
-    if(num && !oldNum) {
-      setNum(num/100)
-    }
-  }
-
-  function changeSign() {
-    if(num && !oldNum) {
-      setNum(num*(-1))
     }
   }
 
@@ -67,6 +76,12 @@ function Calculator() {
     }
   }
 
+  function inputDot(e) {
+    if(!num.includes(".")) {
+      inputValue(e)
+    }
+  }
+
   return (
     <div className="calculator">
       <div className="view">
@@ -91,7 +106,7 @@ function Calculator() {
         <button onClick={inputValue} value={3} className="btn">3</button>
         <button onClick={handleOperator} value={"+"} className="btn btn-operator">+</button>
         <button onClick={inputValue} value={0} className="btn btn-big">0</button>
-        <button onClick={inputValue} value={"."} className="btn">.</button>
+        <button onClick={inputDot} value={"."} className="btn">.</button>
         <button onClick={calculate} className="btn btn-result">=</button>
       </div>
     </div>
